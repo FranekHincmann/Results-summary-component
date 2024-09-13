@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>My solution | Results summary component</title>
+  </head>
+  <body>
+    <style>
+      :root {
+        /*  primary */
+        --pr-Light-red: hsl(0, 100%, 67%);
+        --pr-Orangey-yellow: hsl(39, 100%, 56%);
+        --pr-Green-teal: hsl(166, 100%, 37%);
+        --pr-Cobalt-blue: hsl(234, 85%, 45%);
+        /*gradients */
+        --grd-Light-slate-blue: hsl(252, 100%, 67%);
+        --grd-Light-royal-blue: hsl(241, 81%, 54%);
+        --grd-Violet-blue: hsla(256, 72%, 46%, 1);
+        --grd-Persian-blue: hsla(241, 72%, 46%, 0);
+        /*  neutral */
+        --clr-White: hsl(0, 0%, 100%);
+        --clr-Pale-blue: hsl(221, 100%, 96%);
+        --clr-Light-lavender: hsl(241, 100%, 89%);
+        --clr-Dark-gray-blue: hsl(224, 30%, 27%);
+        /*  font families */
+        font-family: "Hanken Grotesk", sans-serif; /*500, 700, 800 */
+        font-optical-sizing: auto;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 50rem;
+      }
+
+      p {
+        font-size: 18px;
+      }
+      .All {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-shadow: 2px 5px 13px -6px rgba(66, 68, 90, 1);
+        -moz-box-shadow: 2px 5px 13px -6px rgba(66, 68, 90, 1);
+        box-shadow: 2px 5px 13px -6px rgba(66, 68, 90, 1);
+        text-align: center;
+        border-radius: 1rem;
+      }
+      .wrapper {
+        background: linear-gradient(to bottom, #4b00c9, #6b59ef);
+        width: 19rem;
+        border-radius: 1.5rem;
+        height: 28rem;
+      }
+      .container {
+        margin-right: 1.5rem;
+      }
+
+      .Your-result {
+        color: hsl(241, 100%, 89%);
+        font-weight: 500;
+      }
+      .Big-number {
+        color: var(--clr-White);
+        font-weight: 800;
+        font-size: 3rem;
+        padding-top: 3rem;
+      }
+
+      .Great {
+        color: var(--clr-White);
+        font-weight: 500;
+      }
+      .para-one {
+        color: var(--clr-Light-lavender);
+        font-weight: 500;
+        font-size: 15px;
+        padding-bottom: 1.5rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+      .Summary {
+        font-weight: 800;
+        text-align: left;
+        margin-left: 2rem;
+        font-size: 1.3rem;
+      }
+      .Reaction {
+        color: red;
+        font-weight: 500;
+      }
+      .Memory {
+        color: var(--pr-Orangey-yellow);
+        font-weight: 500;
+      }
+      .Verbal {
+        color: mediumaquamarine;
+        font-weight: 500;
+      }
+      .Visual {
+        color: darkblue;
+        font-weight: 500;
+      }
+      .punkty-reaction {
+        display: flex;
+        gap: 3.5rem;
+        background: lightcoral;
+        margin-left: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .punkty-memory {
+        display: flex;
+        gap: 3.7rem;
+        background: lightyellow;
+        margin-left: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .punkty-verbal {
+        display: flex;
+        gap: 4.6rem;
+        background: mintcream;
+        margin-left: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .punkty-visual {
+        display: flex;
+        gap: 4.8rem;
+        background: lightblue;
+        margin-left: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .of-100 {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--clr-Light-lavender);
+      }
+      .circle-number {
+        background: rgba(0, 0, 0, 0.1);
+        margin-left: 4.5rem;
+        margin-right: 4.5rem;
+        border-radius: 100%;
+      }
+      .click-continue {
+        background-color: #2c3e50; /* Ciemny granatowy kolor tła */
+        color: white;
+        border: none; /* Brak obramowania */
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        width: 16rem;
+        margin-left: 1.5rem;
+        height: 3rem;
+        font-weight: 500;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        margin-top: 1rem;
+      }
+      .click-continue:hover {
+        background: linear-gradient(to bottom, #4b00c9, #6b59ef);
+      }
+    </style>
+    <footer class="All">
+      <main class="wrapper">
+        <h3 class="Your-result">Your Result</h3>
+        <div class="circle-number">
+          <h1 class="Big-number">
+            76 <br /><span class="of-100">of 100</span>
+          </h1>
+        </div>
+        <h2 class="Great">Great</h2>
+        <p class="para-one">
+          You scored higher than 65% of the people who have taken these tests.
+        </p>
+      </main>
+
+      <aside class="container">
+        <h3 class="Summary">Summary</h3>
+        <div class="punkty">
+          <div class="punkty-reaction">
+            <p class="Reaction">Reaction</p>
+            <p class="Reaction-punkty">80/100</p>
+          </div>
+          <div class="punkty-memory">
+            <p class="Memory">Memory</p>
+            <p class="Memory-punkty">92/100</p>
+          </div>
+          <div class="punkty-verbal">
+            <p class="Verbal">Verbal</p>
+            <p class="Verbal-punkty">61/100</p>
+          </div>
+          <div class="punkty-visual">
+            <p class="Visual">Visual</p>
+            <p class="Visual-punkty">72/100</p>
+          </div>
+        </div>
+        <div class="click">
+          <button class="click-continue">Continue</button>
+        </div>
+      </aside>
+    </footer>
+  </body>
+</html>
